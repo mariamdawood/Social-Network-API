@@ -64,20 +64,24 @@ const thoughtController = {
     },
     // Update a thought by its id
     async updateThought(req, res) {
-        // Attempt to update a thought by its id
-        const dbThoughtData = await Thought.findOneAndUpdate({ _id: req.params.thoughtId }, { $set: req.body }, { runValidators: true, new: true });
+        try {
+            // Attempt to update a thought by its id
+            const dbThoughtData = await Thought.findOneAndUpdate({ _id: req.params.thoughtId }, { $set: req.body }, { runValidators: true, new: true });
 
-        // Respond with 404 if no thought is found
-        if (!dbThoughtData) {
-            return res.status(404).json({ message: 'No thought with this id!' });
+            // Respond with 404 if no thought is found
+            if (!dbThoughtData) {
+                return res.status(404).json({ message: 'No thought with this id!' });
+            }
+
+            // Respond with JSON containing the updated thought
+            res.json(dbThoughtData);
+
+            // Log error and respond with 500 status code for server error
+        } catch (err) {
+            // Log error and respond with 500 status code for server error
+            console.error(err);
+            res.status(500).json({ message: 'Server error' });
         }
-
-        // Respond with JSON containing the updated thought
-        res.json(dbThoughtData);
-
-        // Log error and respond with 500 status code for server error
-        console.log(err);
-        res.status(500).json(err);
     },
     // Delete a thought by its id
     async deleteThought(req, res) {
@@ -96,11 +100,6 @@ const thoughtController = {
                 { $pull: { thoughts: req.params.thoughtId } },
                 { new: true }
             );
-
-            // Respond with 404 if no user is found
-            if (!dbUserData) {
-                return res.status(404).json({ message: 'Thought deleted but no user with this id!' });
-            }
 
             // Respond with success message
             res.json({ message: 'Thought successfully deleted!' });

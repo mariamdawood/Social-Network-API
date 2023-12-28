@@ -4,7 +4,7 @@
 This API is built for a social network web application using Express.js and MongoDB with Mongoose. User can use Insomnia to test APIs to share thoughts, react to friends' thoughts, and manage their friend list. Explore the walkthrough video for a demonstration of the API's functionality.
 
 ## Walkthrough Video
-[Social Network API](Link)
+[Social Network API](https://drive.google.com/file/d/131bjzbBWM-Ms1CaFxsmo57nfNlm357wn/view?usp=drive_link)
 
 ## Screenshot
 ![Users](./assets/images/1.png)
