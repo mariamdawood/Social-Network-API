@@ -1,6 +1,11 @@
-const mongoose = require('mongoose')
-require('dotenv').config()
+// Import mongoose for MongoDB
+const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/social-network-api')
+// Load environment variables
+require('dotenv').config();
 
-module.exports = mongoose.connection
+// Connect to MongoDB using provided URI or default local URI
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/social-network-api');
+
+// Export the mongoose connection
+module.exports = mongoose.connection;
