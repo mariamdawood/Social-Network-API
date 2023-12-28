@@ -1,13 +1,14 @@
-# Project Title [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# Social Network API [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-Description
+This API is built for a social network web application using Express.js and MongoDB with Mongoose. User can use Insomnia to test APIs to share thoughts, react to friends' thoughts, and manage their friend list. Explore the walkthrough video for a demonstration of the API's functionality.
 
-## Deployed Application URL / Walkthrough Video
-[alt-text](Link)
+## Walkthrough Video
+[Social Network API](Link)
 
 ## Screenshot
-![](Screenshot path)
+![Users](./assets/images/1.png)
+![Thoughts](./assets/images/2.png)
 
 ## Table of Contents
 - [Installation](#installation)
@@ -19,17 +20,17 @@ Description
 - [Questions](#questions)
 
 ## Installation
-Installation
+- Clone the repository
+- Run 'npm install express@latest mongoose@latest @dotenv@latest' to install dependencies
+- Set up your MongoDB connection by creating a '.env' file and add your MongoDB URI.
 
 ## Usage
-Usage
+- Run 'npm start' to connect to the server.
+- Test APIs in Insomnia.
 
 ## Contributor Guidelines
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
-
-## Credits
-Credits
 
 ## License
 
